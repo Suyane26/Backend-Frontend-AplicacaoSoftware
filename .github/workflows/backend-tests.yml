@@ -1,0 +1,28 @@
+name: Backend Cypress Tests
+
+on: [push]
+
+jobs:
+  backend-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          npm install
+
+      - name: Run Backend Tests
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: backend
+          start: npm start
+          wait-on: "http://localhost:3000"
