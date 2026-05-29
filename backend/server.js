@@ -4,7 +4,10 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Rota de exemplo para testar
+app.get('/', (req, res) => {
+    res.status(200).send('API Online');
+});
+
 app.get('/api/produtos', (req, res) => {
     res.status(200).json([
         { id: 1, nome: 'Teclado Mecânico', preco: 250 },
@@ -12,9 +15,6 @@ app.get('/api/produtos', (req, res) => {
     ]);
 });
 
-// Exportando para o caso de testes futuros, mas iniciando o servidor na porta
-const server = app.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-module.exports = server;

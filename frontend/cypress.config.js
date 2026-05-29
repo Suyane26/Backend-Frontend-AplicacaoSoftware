@@ -4,7 +4,7 @@ module.exports = defineConfig({
   e2e: {
     supportFile: false,
     setupNodeEvents(on, config) {
-      // implemente node event listeners aqui se necessário
+
     },
   },
 });

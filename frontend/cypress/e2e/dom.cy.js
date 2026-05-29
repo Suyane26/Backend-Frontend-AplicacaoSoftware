@@ -1,6 +1,5 @@
 describe('Testes do Frontend', () => {
   beforeEach(() => {
-    // Abre o arquivo index.html diretamente para o teste
     cy.visit('index.html');
   });
 

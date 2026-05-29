@@ -25,4 +25,4 @@ jobs:
         with:
           working-directory: backend
           start: npm start
-          wait-on: "http://localhost:3000"
+          wait-on: "http://localhost:3000/api/produtos"
