@@ -1,7 +1,7 @@
-/* Configurações Globais */
 * {
     margin: 0;
     padding: 0;
+    box-shadow: border-box;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -14,11 +14,10 @@ body {
     min-height: 100vh;
 }
 
-/* Container Principal */
 .container {
     background: #ffffff;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -31,11 +30,10 @@ h1 {
     text-align: center;
 }
 
-/* Área de Input e Botão */
 .input-group {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 input {
@@ -45,30 +43,52 @@ input {
     border-radius: 6px;
     font-size: 14px;
     outline: none;
-    transition: border-color 0.2s;
 }
 
 input:focus {
     border-color: #3b82f6;
 }
 
-button {
+#addBtn {
     padding: 10px 20px;
     background-color: #3b82f6;
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-button:hover {
-    background-color: #2563eb;
+/* barra de filtros */
+.filter-group {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 8px;
 }
 
-/* Lista de Tarefas */
+.filter-btn {
+    flex: 1;
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn.active {
+    background: white;
+    color: #1e293b;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Lista de itens */
 ul {
     list-style: none;
     display: flex;
@@ -77,12 +97,44 @@ ul {
 }
 
 li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #f8fafc;
     padding: 12px 15px;
     border-left: 4px solid #3b82f6;
     border-radius: 4px;
     color: #475569;
     font-size: 14px;
-    word-break: break-all;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s;
 }
+
+li.hidden {
+    display: none !important;
+}
+
+li.completed .task-text {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+li.completed {
+    border-left-color: #10b981;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+}
+
+.actions button {
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.done-btn { background-color: #10b981; }
+.delete-btn { background-color: #ef4444; }
