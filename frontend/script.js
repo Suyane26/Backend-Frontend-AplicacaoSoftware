@@ -1,4 +1,4 @@
-let currentFilter = 'all';
+let currentFilter = 'all'; 
 
 // Adicionar tarefa
 document.getElementById('addBtn').addEventListener('click', () => {
